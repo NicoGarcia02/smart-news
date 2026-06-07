@@ -1,6 +1,7 @@
+import { NextResponse } from "next/server";
 import { streamText } from "ai";
 import { google } from "@ai-sdk/google";
-import { readCache, readPerfil } from "@/lib/data";
+import { readCache, readPerfil, readCurrentSummary, readSummaryHistory } from "@/lib/data";
 
 export async function POST() {
   const cache = await readCache();
@@ -40,4 +41,17 @@ INSTRUCCIONES:
   });
 
   return result.toTextStreamResponse();
+}
+
+export async function GET() {
+  try {
+    const [current, history] = await Promise.all([
+      readCurrentSummary(),
+      readSummaryHistory(),
+    ]);
+    return NextResponse.json({ current, history });
+  } catch (error) {
+    const msg = error instanceof Error ? error.message : "Error";
+    return NextResponse.json({ error: msg }, { status: 500 });
+  }
 }

@@ -7,6 +7,7 @@ interface Props {
   item: NewsItem;
   index?: number;
   onFeedback: (item: NewsItem, action: "like" | "dislike") => Promise<void>;
+  onAnalyze: (item: NewsItem) => void;
 }
 
 const CATEGORY_COLORS: Record<string, { text: string; bg: string; dot: string }> = {
@@ -45,7 +46,7 @@ function timeAgo(dateStr: string): string {
   }
 }
 
-export function NewsCard({ item, index = 0, onFeedback }: Props) {
+export function NewsCard({ item, index = 0, onFeedback, onAnalyze }: Props) {
   const [status, setStatus] = useState<"idle" | "like" | "dislike" | "loading">("idle");
   const style = getCategoryStyle(item.category);
 
@@ -113,10 +114,19 @@ export function NewsCard({ item, index = 0, onFeedback }: Props) {
           </p>
         )}
 
-        {/* Source */}
-        <p className="text-[10px] mt-auto" style={{ color: "var(--muted)" }}>
-          {item.source}
-        </p>
+        {/* Source + Analyze */}
+        <div className="flex items-center justify-between mt-auto">
+          <p className="text-[10px]" style={{ color: "var(--muted)" }}>{item.source}</p>
+          <button
+            onClick={() => onAnalyze(item)}
+            className="text-[10px] font-medium transition-colors"
+            style={{ color: "var(--accent)" }}
+            onMouseEnter={e => (e.currentTarget.style.opacity = "0.7")}
+            onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
+          >
+            Analizar →
+          </button>
+        </div>
       </div>
 
       {/* Divider */}

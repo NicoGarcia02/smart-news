@@ -1,5 +1,5 @@
 import Parser from "rss-parser";
-import { readSources } from "./data";
+import { readSourcesAsync } from "./data";
 
 export interface RawNewsItem {
   title: string;
@@ -36,7 +36,7 @@ function isRecent(dateStr: string): boolean {
 }
 
 export async function fetchAllNews(): Promise<RawNewsItem[]> {
-  const sources = readSources();
+  const sources = await readSourcesAsync();
   const results: RawNewsItem[] = [];
 
   for (const [category, feeds] of Object.entries(sources.categories)) {
