@@ -30,7 +30,7 @@ export async function POST() {
       .join("\n");
 
     const { object } = await generateObject({
-      model: google("gemini-2.0-flash-lite"),
+      model: google("gemini-2.5-flash"),
       schema: FilterSchema,
       prompt: `Sos un curador de noticias. Devolvé en "kept" los ÍNDICES de las noticias relevantes para este perfil.
 
