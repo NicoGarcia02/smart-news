@@ -62,7 +62,11 @@ function writeJson(filename: string, data: unknown): void {
 
 async function getRedis() {
   const { Redis } = await import("@upstash/redis");
-  return Redis.fromEnv();
+  // Limpiamos comillas que puedan haber quedado al copiar desde Upstash
+  const url = (process.env.UPSTASH_REDIS_REST_URL ?? "").replace(/^["']|["']$/g, "").trim();
+  const token = (process.env.UPSTASH_REDIS_REST_TOKEN ?? "").replace(/^["']|["']$/g, "").trim();
+  console.log("[REDIS] URL prefix:", url.slice(0, 20), "| Token length:", token.length);
+  return new Redis({ url, token });
 }
 
 // ─── Public API ──────────────────────────────────────────────────────────────
