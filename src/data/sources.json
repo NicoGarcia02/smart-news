@@ -1,0 +1,72 @@
+{
+  "categories": {
+    "finanzas": [
+      {
+        "name": "Ámbito Financiero",
+        "url": "https://www.ambito.com/rss/pages/home.xml"
+      },
+      {
+        "name": "El Cronista (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:cronista.com&hl=es-419&gl=AR&ceid=AR:es-419"
+      },
+      {
+        "name": "Reuters Economía (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:reuters.com+economia+OR+mercados+OR+finanzas&hl=es-419&gl=AR&ceid=AR:es-419"
+      },
+      {
+        "name": "Bloomberg (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:bloomberg.com&hl=es-419&gl=AR&ceid=AR:es-419"
+      }
+    ],
+    "argentina": [
+      {
+        "name": "Clarín",
+        "url": "https://www.clarin.com/rss/lo-ultimo/"
+      },
+      {
+        "name": "La Nación (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:lanacion.com.ar&hl=es-419&gl=AR&ceid=AR:es-419"
+      },
+      {
+        "name": "Infobae (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:infobae.com&hl=es-419&gl=AR&ceid=AR:es-419"
+      },
+      {
+        "name": "Página 12 (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:pagina12.com.ar&hl=es-419&gl=AR&ceid=AR:es-419"
+      }
+    ],
+    "geopolitica": [
+      {
+        "name": "BBC Mundo",
+        "url": "https://feeds.bbci.co.uk/mundo/rss.xml"
+      },
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/xml/rss/all.xml"
+      },
+      {
+        "name": "DW Español (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:dw.com&hl=es-419&gl=AR&ceid=AR:es-419"
+      },
+      {
+        "name": "Reuters Mundial (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:reuters.com+geopolitica+OR+guerra+OR+diplomacia&hl=es-419&gl=AR&ceid=AR:es-419"
+      },
+      {
+        "name": "The Guardian",
+        "url": "https://www.theguardian.com/world/rss"
+      }
+    ],
+    "tecnologia": [
+      {
+        "name": "Ars Technica",
+        "url": "https://feeds.arstechnica.com/arstechnica/index"
+      },
+      {
+        "name": "MIT Technology Review (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:technologyreview.com&hl=es-419&gl=AR&ceid=AR:es-419"
+      }
+    ]
+  }
+}
